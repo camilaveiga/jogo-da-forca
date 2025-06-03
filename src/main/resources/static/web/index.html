@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jogo da Forca</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+</head>
+<body>
+<h1>JOGO DA FORCA</h1>
+
+<div id="mensagemFinal" class="hidden">
+    <img src="img/perdeu.gif" alt="gif" />
+    <h2 id="mensagem"></h2>
+    <p>A palavra correta era: <strong><span id="palavraCorreta"></span></strong></p>
+    <button id="jogarNovamente">Jogar novamente</button>
+</div>
+
+<!-- Imagem da forca removida temporariamente -->
+<!-- <img id="imagemForca" src="img/forca.png" alt="forca" /> -->
+
+<h2>FORCA</h2>
+
+<p><strong>Dica:</strong> <span id="dica"></span></p>
+<p><strong>Tentativas restantes:</strong> <span id="tentativasRestantes"></span></p>
+
+<div id="palavraSecreta"></div>
+<div id="letrasErradas"></div>
+<div id="teclado"></div>
+</body>
+</html>
