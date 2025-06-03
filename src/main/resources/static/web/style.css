@@ -2,12 +2,19 @@ body {
   font-family: Arial, sans-serif;
   text-align: center;
   margin: 20px;
+  background-color: #93DCF6;
 }
 
 h1, h2 {
   font-weight: bold;
+  font-family:  "Jua", sans-serif;
+  color: #502870;
 }
 
+p {
+  font-family:  "Jua", sans-serif;
+  color: #9A61C7;
+}
 .hidden {
   display: none;
 }
@@ -32,9 +39,32 @@ h1, h2 {
   padding: 10px;
   font-size: 16px;
   cursor: pointer;
+  border: 3px solid #502870;
+  border-radius: 10px;
+  background-color: rgb(106, 158, 214);
+  box-shadow: 4px 4px 5px rgb(52, 45, 94);
+  font-weight: bold;
 }
 
 button:disabled {
   background-color: #ccc;
   cursor: not-allowed;
+}
+
+.play-button,
+.replay-button {
+  padding: 20px 30px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+  background-color: #724894;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.play-button:hover,
+.replay-button:hover {
+  background-color: #3a1e52;
 }

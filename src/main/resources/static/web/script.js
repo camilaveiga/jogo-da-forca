@@ -8,7 +8,7 @@ const tecladoElemento = document.getElementById("teclado");
 const mensagemFinalElemento = document.getElementById("mensagemFinal");
 const mensagemElemento = document.getElementById("mensagem");
 const palavraCorretaElemento = document.getElementById("palavraCorreta");
-const jogarNovamenteBtn = document.getElementById("jogarNovamente");
+const jogarNovamenteBtn = document.getElementById("replay-button");
 
 async function iniciarJogo() {
   try {
@@ -16,7 +16,7 @@ async function iniciarJogo() {
     if (!resposta.ok) throw new Error("Erro ao buscar palavra");
     const dados = await resposta.json();
 
-    palavraSelecionada = dados.palavra; // mantém original para mostrar no final
+    palavraSelecionada = dados.palavra;
     dicaSelecionada = dados.dica;
     letrasErradas = [];
     letrasCorretas = [];
@@ -30,7 +30,6 @@ async function iniciarJogo() {
 
     criarTeclado();
     atualizarPalavraSecreta();
-
   } catch (error) {
     console.error("Erro ao iniciar jogo:", error);
     dicaElemento.textContent = "Não foi possível carregar a palavra.";
@@ -58,8 +57,7 @@ async function verificarLetra(letra, botao) {
     });
     if (!resposta.ok) throw new Error('Erro na tentativa');
 
-    const resultado = await resposta.json();
-    // Exemplo: { acertou: true, posicoes: [0, 3] }
+    const resultado = await resposta.json(); // { acertou: true, posicoes: [x, y] }
 
     if (resultado.acertou) {
       if (!letrasCorretas.includes(letra.toLowerCase())) {
@@ -74,7 +72,6 @@ async function verificarLetra(letra, botao) {
 
     atualizarPalavraSecreta();
     atualizarEstado();
-
   } catch (error) {
     console.error("Erro ao tentar letra:", error);
   }
@@ -108,5 +105,10 @@ function mostrarMensagem(texto) {
   mensagemFinalElemento.classList.remove("hidden");
 }
 
-jogarNovamenteBtn.addEventListener("click", iniciarJogo);
-iniciarJogo();
+// ✅ Corrigido: evento do botão de "Jogar novamente"
+jogarNovamenteBtn.addEventListener("click", () => {
+  iniciarJogo();
+});
+
+// ✅ Inicia o jogo quando a página carregar
+document.addEventListener("DOMContentLoaded", iniciarJogo);

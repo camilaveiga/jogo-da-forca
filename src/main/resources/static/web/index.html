@@ -5,22 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jogo da Forca</title>
     <link rel="stylesheet" href="style.css" />
+    <link href='https://fonts.googleapis.com/css?family=Jua' rel='stylesheet'>
     <script src="script.js" defer></script>
 </head>
 <body>
 <h1>JOGO DA FORCA</h1>
 
 <div id="mensagemFinal" class="hidden">
-    <img src="img/perdeu.gif" alt="gif" />
+    <img src="img/forca.png" alt="png   " />
     <h2 id="mensagem"></h2>
     <p>A palavra correta era: <strong><span id="palavraCorreta"></span></strong></p>
-    <button id="jogarNovamente">Jogar novamente</button>
+    <button id="replay-button" class="replay-button">Jogar novamente</button>
 </div>
 
 <!-- Imagem da forca removida temporariamente -->
 <!-- <img id="imagemForca" src="img/forca.png" alt="forca" /> -->
-
-<h2>FORCA</h2>
 
 <p><strong>Dica:</strong> <span id="dica"></span></p>
 <p><strong>Tentativas restantes:</strong> <span id="tentativasRestantes"></span></p>
